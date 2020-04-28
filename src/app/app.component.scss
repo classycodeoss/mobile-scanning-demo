@@ -1,0 +1,28 @@
+.error-message {
+  background-color: black;
+  text-align: center;
+  color: red;
+  padding: 8px;
+}
+
+.scanned-code {
+  background-color: black;
+  text-align: center;
+  color: white;
+  font-size: 1.4em;
+  padding: 8px;
+}
+
+.instructions {
+  padding: 8px;
+}
+
+.viewport {
+  height: 240px;
+}
+
+.viewport::ng-deep video {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+}

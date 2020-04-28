@@ -1,6 +1,8 @@
 {
   "name": "mobile-scanning-demo",
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "author": "alex@classycode.com",
+  "license": "Apache-2.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -19,6 +21,7 @@
     "@angular/platform-browser": "~9.1.3",
     "@angular/platform-browser-dynamic": "~9.1.3",
     "@angular/router": "~9.1.3",
+    "quagga": "^0.12.1",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
