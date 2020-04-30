@@ -6,17 +6,19 @@
   <!-- QuaggaJS will populate this element -->
 </div>
 
-<div class="scanned-code">
-  <ng-container *ngIf="scannedCode else noCodeScannedYet">
-    EAN-13: {{ scannedCode }}
-  </ng-container>
-  <ng-template #noCodeScannedYet>
-    No code scanned yet
+<div class="shopping-cart">
+
+  <span *ngIf="shoppingCart.isEmpty else shoppingCartItems">Shopping cart is empty</span>
+  <ng-template #shoppingCartItems>
+
+    <app-shopping-cart-item
+      *ngFor="let articleAndCount of shoppingCart.items.entries()"
+      [article]="articleAndCount[0]"
+      [count]="articleAndCount[1]">
+    </app-shopping-cart-item>
+
+    <div class="shopping-cart-total">
+      Total: {{ shoppingCart.totalPrice }} USD
+    </div>
   </ng-template>
-</div>
-
-<div class="instructions">
-  <p>This app is a demonstration of barcode reading in mobile web apps.</p>
-
-  <p>It is a companion app for the blog post at: TODO</p>
 </div>

@@ -5,18 +5,6 @@
   padding: 8px;
 }
 
-.scanned-code {
-  background-color: black;
-  text-align: center;
-  color: white;
-  font-size: 1.4em;
-  padding: 8px;
-}
-
-.instructions {
-  padding: 8px;
-}
-
 .viewport {
   height: 240px;
 }
@@ -25,4 +13,15 @@
   width: 100%;
   height: 240px;
   object-fit: cover;
+}
+
+.shopping-cart {
+  padding: 16px;
+}
+
+.shopping-cart-total {
+  margin-top: 16px;
+  font-size: 1.6em;
+  font-weight: bold;
+  text-align: right;
 }

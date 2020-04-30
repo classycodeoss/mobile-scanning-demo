@@ -1,6 +1,8 @@
 import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { BeepService } from './beep.service';
 import Quagga from 'quagga';
+import { Article } from './article';
+import { ShoppingCart } from './shopping-cart';
 
 @Component({
   selector: 'app-root',
@@ -10,11 +12,21 @@ import Quagga from 'quagga';
 export class AppComponent implements AfterViewInit {
 
   errorMessage: string;
-  scannedCode: string;
-  scannedCodeDate: number;
+
+  shoppingCart: ShoppingCart;
+
+  private catalogue: Article[] = [
+    { name: 'Classy Crab (red)', ean: '7601234567890', image: 'assets/classy_crab_red.png', price: 10 },
+    { name: 'Classy Crab (blue)', ean: '7601234561232', image: 'assets/classy_crab_blue.png', price: 10 },
+    { name: 'Classy Crab (gold, ltd. ed.)', ean: '7601234564561', image: 'assets/classy_crab_gold.png', price: 50 }
+  ];
+
+  private lastScannedCode: string;
+  private lastScannedCodeDate: number;
 
   constructor(private changeDetectorRef: ChangeDetectorRef,
               private beepService: BeepService) {
+    this.shoppingCart = new ShoppingCart();
   }
 
   ngAfterViewInit(): void {
@@ -25,8 +37,6 @@ export class AppComponent implements AfterViewInit {
 
     Quagga.init({
         inputStream: {
-          name: 'Live',
-          type: 'LiveStream',
           constraints: {
             facingMode: 'environment'
           },
@@ -48,22 +58,31 @@ export class AppComponent implements AfterViewInit {
           Quagga.start();
           Quagga.onDetected((res) => {
             this.onBarcodeScanned(res.codeResult.code);
-          })
+          });
         }
-      })
+      });
   }
 
   onBarcodeScanned(code: string) {
 
-    // ignore duplicates for an interval of 2.5 seconds
+    // ignore duplicates for an interval of 1.5 seconds
     const now = new Date().getTime();
-    if (code === this.scannedCode && (now < this.scannedCodeDate + 2500)) {
+    if (code === this.lastScannedCode && (now < this.lastScannedCodeDate + 1500)) {
       return;
     }
 
-    this.scannedCode = code;
-    this.scannedCodeDate = new Date().getTime();
+    // ignore unknown articles
+    const article = this.catalogue.find(a => a.ean === code);
+    if (!article) {
+      return;
+    }
+
+    this.shoppingCart.addArticle(article);
+
+    this.lastScannedCode = code;
+    this.lastScannedCodeDate = now;
     this.beepService.beep();
     this.changeDetectorRef.detectChanges();
   }
+
 }
