@@ -3,6 +3,7 @@ import { BeepService } from './beep.service';
 import Quagga from 'quagga';
 import { Article } from './article';
 import { ShoppingCart } from './shopping-cart';
+import { UpdateService } from './update.service';
 
 @Component({
   selector: 'app-root',
@@ -25,7 +26,8 @@ export class AppComponent implements AfterViewInit {
   private lastScannedCodeDate: number;
 
   constructor(private changeDetectorRef: ChangeDetectorRef,
-              private beepService: BeepService) {
+              private beepService: BeepService,
+              private updateService: UpdateService) {
     this.shoppingCart = new ShoppingCart();
   }
 
@@ -61,6 +63,10 @@ export class AppComponent implements AfterViewInit {
           });
         }
       });
+
+    setTimeout(() => {
+      this.updateService.checkForUpdates();
+    }, 10000);
   }
 
   onBarcodeScanned(code: string) {
