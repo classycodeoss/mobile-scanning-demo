@@ -1,6 +1,6 @@
 {
   "name": "PWA Scan Demo",
-  "short_name": "PWA Scan Demor",
+  "short_name": "PWA Scan Demo",
   "theme_color": "#ffffff",
   "background_color": "#1e3270",
   "display": "standalone",
