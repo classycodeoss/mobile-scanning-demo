@@ -2,7 +2,7 @@
   {{ errorMessage }}
 </div>
 
-<div id="interactive" class="viewport">
+<div id="scanner-container">
   <!-- QuaggaJS will populate this element -->
 </div>
 
@@ -11,19 +11,29 @@
   The source code is available on <a target="_blank" href="https://github.com/classycodeoss/mobile-scanning-demo">Github</a>.
 </div>
 
+<div class="controls">
+  <form>
+    <input id="acceptAnyCode" type="checkbox" [(ngModel)]="acceptAnyCode" name="acceptAnyCode" required/>
+    <label for="acceptAnyCode">Accept any code</label>
+    &nbsp;
+    <button (click)="clearCart()">Clear cart</button>
+  </form>
+
+</div>
+
 <div class="shopping-cart">
 
-  <span *ngIf="shoppingCart.isEmpty else shoppingCartItems">Shopping cart is empty</span>
+  <span *ngIf="items.length === 0 else shoppingCartItems">Shopping cart is empty</span>
   <ng-template #shoppingCartItems>
 
     <app-shopping-cart-item
-      *ngFor="let articleAndCount of shoppingCart.items.entries()"
+      *ngFor="let articleAndCount of items"
       [article]="articleAndCount[0]"
       [count]="articleAndCount[1]">
     </app-shopping-cart-item>
 
     <div class="shopping-cart-total">
-      Total: {{ shoppingCart.totalPrice }} USD
+      Total: {{ totalPrice }} USD
     </div>
   </ng-template>
 </div>

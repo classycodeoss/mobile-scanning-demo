@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 import { ServiceWorkerModule, SwRegistrationOptions } from '@angular/service-worker';
 
 import { AppComponent } from './app.component';
@@ -14,6 +15,7 @@ import { environment } from '../environments/environment';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
 
     // PWA support
     ServiceWorkerModule.register('ngsw-worker.js')

@@ -2,7 +2,7 @@ import { Article } from './article';
 
 export class ShoppingCart {
 
-  items: Map<Article, number>;
+  private items: Map<Article, number>;
 
   constructor() {
     this.items = new Map<Article, number>();
@@ -17,6 +17,10 @@ export class ShoppingCart {
     }
   }
 
+  clear() {
+    this.items.clear();
+  }
+
   get isEmpty(): boolean {
     return this.items.size === 0;
   }
@@ -27,5 +31,13 @@ export class ShoppingCart {
       total += entry[0].price * entry[1];
     }
     return total;
+  }
+
+  get contents(): [Article, number][] {
+    let result = [];
+    for (const entry of this.items.entries()) {
+      result.push(entry);
+    }
+    return result;
   }
 }
