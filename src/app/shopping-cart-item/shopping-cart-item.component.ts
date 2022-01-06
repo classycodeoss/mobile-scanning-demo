@@ -12,10 +12,10 @@ export class ShoppingCartItemComponent implements OnInit {
   }
 
   @Input()
-  article: Article;
+  article: Article | undefined;
 
   @Input()
-  count: number;
+  count: number | undefined;
 
   ngOnInit(): void {
   }

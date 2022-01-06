@@ -1,6 +1,6 @@
 {
-  "name": "EAN Crab Scanner",
-  "short_name": "EAN Crab Scanner",
+  "name": "PWA Scan Demo",
+  "short_name": "PWA Scan Demor",
   "theme_color": "#ffffff",
   "background_color": "#1e3270",
   "display": "standalone",

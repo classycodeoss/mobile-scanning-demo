@@ -9,8 +9,9 @@ export class ShoppingCart {
   }
 
   addArticle(article: Article) {
-    if (this.items.has(article)) {
-      this.items.set(article, this.items.get(article) + 1);
+    const existingArticleCount = this.items.get(article) ?? 0;
+    if (existingArticleCount !== 0) {
+      this.items.set(article, existingArticleCount + 1);
     } else {
       this.items.set(article, 1);
     }

@@ -1,9 +1,10 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { ServiceWorkerModule, SwRegistrationOptions } from '@angular/service-worker';
 
 import { AppComponent } from './app.component';
 import { ShoppingCartItemComponent } from './shopping-cart-item/shopping-cart-item.component';
-import { ServiceWorkerModule } from '@angular/service-worker';
+
 import { environment } from '../environments/environment';
 
 @NgModule({
@@ -13,12 +14,21 @@ import { environment } from '../environments/environment';
   ],
   imports: [
     BrowserModule,
-    ServiceWorkerModule.register('ngsw-worker.js', {
-      enabled: environment.production,
-      registrationStrategy: 'registerImmediately'
-    })
+
+    // PWA support
+    ServiceWorkerModule.register('ngsw-worker.js')
   ],
-  providers: [],
+  providers: [
+    {
+      provide: SwRegistrationOptions,
+      useFactory: () => {
+        return {
+          enabled: environment.production,
+          registrationStrategy: 'registerImmediately'
+        };
+      }
+    },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {

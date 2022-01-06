@@ -1,6 +1,6 @@
-import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component } from '@angular/core';
 import { BeepService } from './beep.service';
-import Quagga from 'quagga';
+import Quagga from '@ericblade/quagga2';
 import { Article } from './article';
 import { ShoppingCart } from './shopping-cart';
 import { UpdateService } from './update.service';
@@ -12,8 +12,7 @@ import { UpdateService } from './update.service';
 })
 export class AppComponent implements AfterViewInit {
 
-  errorMessage: string;
-
+  errorMessage: string | undefined;
   shoppingCart: ShoppingCart;
 
   private catalogue: Article[] = [
@@ -22,8 +21,8 @@ export class AppComponent implements AfterViewInit {
     { name: 'Classy Crab (gold, ltd. ed.)', ean: '7601234564561', image: 'assets/classy_crab_gold.png', price: 50 }
   ];
 
-  private lastScannedCode: string;
-  private lastScannedCodeDate: number;
+  private lastScannedCode: string | undefined;
+  private lastScannedCodeDate: number  | undefined;
 
   constructor(private changeDetectorRef: ChangeDetectorRef,
               private beepService: BeepService,
@@ -59,10 +58,19 @@ export class AppComponent implements AfterViewInit {
         } else {
           Quagga.start();
           Quagga.onDetected((res) => {
-            this.onBarcodeScanned(res.codeResult.code);
+            if (res.codeResult.code) {
+              this.onBarcodeScanned(res.codeResult.code);
+            }
           });
         }
-      });
+      })
+      .then(() => {
+        console.log(`Quagga initialization succeeded`);
+      })
+      .catch(err => {
+        console.error(`Quagga initialization failed: ${err}`);
+        this.errorMessage = `Quagga initialization failed: ${err}`;
+      })
 
     setTimeout(() => {
       this.updateService.checkForUpdates();
@@ -73,7 +81,8 @@ export class AppComponent implements AfterViewInit {
 
     // ignore duplicates for an interval of 1.5 seconds
     const now = new Date().getTime();
-    if (code === this.lastScannedCode && (now < this.lastScannedCodeDate + 1500)) {
+    if (code === this.lastScannedCode
+      && ((this.lastScannedCodeDate !== undefined) && (now < this.lastScannedCodeDate + 1500))) {
       return;
     }
 
