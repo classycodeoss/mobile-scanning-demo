@@ -110,6 +110,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "mobile-scanning-demo:build:production",
+            "firebaseProject": "pwa-gabi",
+            "firebaseHostingSite": "pwa-gabi"
+          }
         }
       }
     }
