@@ -1,7 +1,7 @@
 {
   "configVersion": 1,
-  "timestamp": 1660893281312,
-  "index": "/angular-app/index.html",
+  "timestamp": 1660903759273,
+  "index": "/index.html",
   "assetGroups": [
     {
       "name": "app",
@@ -11,13 +11,13 @@
         "ignoreVary": true
       },
       "urls": [
-        "/angular-app/favicon.ico",
-        "/angular-app/index.html",
-        "/angular-app/main.5ff5a6b62acf38cc.js",
-        "/angular-app/manifest.webmanifest",
-        "/angular-app/polyfills.5990fc78f4dc9bba.js",
-        "/angular-app/runtime.0f056e590c45ddd9.js",
-        "/angular-app/styles.186c8db44232dde1.css"
+        "/favicon.ico",
+        "/index.html",
+        "/main.5ff5a6b62acf38cc.js",
+        "/manifest.webmanifest",
+        "/polyfills.5990fc78f4dc9bba.js",
+        "/runtime.0f056e590c45ddd9.js",
+        "/styles.186c8db44232dde1.css"
       ],
       "patterns": []
     },
@@ -29,45 +29,45 @@
         "ignoreVary": true
       },
       "urls": [
-        "/angular-app/assets/beep.wav",
-        "/angular-app/assets/classy_crab_blue.png",
-        "/angular-app/assets/classy_crab_gold.png",
-        "/angular-app/assets/classy_crab_red.png",
-        "/angular-app/assets/classy_crab_unknown.png",
-        "/angular-app/assets/icons/icon-128x128.png",
-        "/angular-app/assets/icons/icon-144x144.png",
-        "/angular-app/assets/icons/icon-152x152.png",
-        "/angular-app/assets/icons/icon-192x192.png",
-        "/angular-app/assets/icons/icon-384x384.png",
-        "/angular-app/assets/icons/icon-512x512.png",
-        "/angular-app/assets/icons/icon-72x72.png",
-        "/angular-app/assets/icons/icon-96x96.png"
+        "/assets/beep.wav",
+        "/assets/classy_crab_blue.png",
+        "/assets/classy_crab_gold.png",
+        "/assets/classy_crab_red.png",
+        "/assets/classy_crab_unknown.png",
+        "/assets/icons/icon-128x128.png",
+        "/assets/icons/icon-144x144.png",
+        "/assets/icons/icon-152x152.png",
+        "/assets/icons/icon-192x192.png",
+        "/assets/icons/icon-384x384.png",
+        "/assets/icons/icon-512x512.png",
+        "/assets/icons/icon-72x72.png",
+        "/assets/icons/icon-96x96.png"
       ],
       "patterns": []
     }
   ],
   "dataGroups": [],
   "hashTable": {
-    "/angular-app/assets/beep.wav": "0a41b9dfa69770b9b7b08b2dae78b6e11ab54aba",
-    "/angular-app/assets/classy_crab_blue.png": "654fe769ab822980f4549119c897aa5b3211dd7e",
-    "/angular-app/assets/classy_crab_gold.png": "4d3e2a65733c0c6039f2b3aa720698a950a1e3b2",
-    "/angular-app/assets/classy_crab_red.png": "790acd10145aafde256803f614d937a228650328",
-    "/angular-app/assets/classy_crab_unknown.png": "8ed789f5f8550fe6a829d81b507680246cabf129",
-    "/angular-app/assets/icons/icon-128x128.png": "646a30480f30fefd2de520c2609d431c01fe3e27",
-    "/angular-app/assets/icons/icon-144x144.png": "6d524d4bba9fe0f5fb1f78283d5efe98ea6b58b4",
-    "/angular-app/assets/icons/icon-152x152.png": "79b35bcd11d8c74fead1adf69db25d599372a6bc",
-    "/angular-app/assets/icons/icon-192x192.png": "b821c9b647d015db32ac2890594591d131309ef7",
-    "/angular-app/assets/icons/icon-384x384.png": "9e44e750010355ac1ae38aded6075e10f80b8a7a",
-    "/angular-app/assets/icons/icon-512x512.png": "c84ec6a712ab6495024751d28efbf6343606fa94",
-    "/angular-app/assets/icons/icon-72x72.png": "fad9fc8096dbe282cec1de445e5fa778dc9e7440",
-    "/angular-app/assets/icons/icon-96x96.png": "575644dfa15136fc0638748072a0de2dbd111ece",
-    "/angular-app/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "/angular-app/index.html": "f2e7326f6032bf254e8a937fd1f41328c133f5d2",
-    "/angular-app/main.5ff5a6b62acf38cc.js": "7b452e8f5fc375c3dea2d54b98b0bcececa4d5f8",
-    "/angular-app/manifest.webmanifest": "0884e125504f51c70d15c9e221b207db9f9dc5ce",
-    "/angular-app/polyfills.5990fc78f4dc9bba.js": "ee5262f80e1d8eba4ecd9f1d7ed8659ca3ca6d52",
-    "/angular-app/runtime.0f056e590c45ddd9.js": "724a28934f62e81e57d9ee87ce5e391754bc1adc",
-    "/angular-app/styles.186c8db44232dde1.css": "12aaf0c10261b2fe8093ba1a7d8c5d82c9204eb6"
+    "/assets/beep.wav": "0a41b9dfa69770b9b7b08b2dae78b6e11ab54aba",
+    "/assets/classy_crab_blue.png": "654fe769ab822980f4549119c897aa5b3211dd7e",
+    "/assets/classy_crab_gold.png": "4d3e2a65733c0c6039f2b3aa720698a950a1e3b2",
+    "/assets/classy_crab_red.png": "790acd10145aafde256803f614d937a228650328",
+    "/assets/classy_crab_unknown.png": "8ed789f5f8550fe6a829d81b507680246cabf129",
+    "/assets/icons/icon-128x128.png": "646a30480f30fefd2de520c2609d431c01fe3e27",
+    "/assets/icons/icon-144x144.png": "6d524d4bba9fe0f5fb1f78283d5efe98ea6b58b4",
+    "/assets/icons/icon-152x152.png": "79b35bcd11d8c74fead1adf69db25d599372a6bc",
+    "/assets/icons/icon-192x192.png": "b821c9b647d015db32ac2890594591d131309ef7",
+    "/assets/icons/icon-384x384.png": "9e44e750010355ac1ae38aded6075e10f80b8a7a",
+    "/assets/icons/icon-512x512.png": "c84ec6a712ab6495024751d28efbf6343606fa94",
+    "/assets/icons/icon-72x72.png": "fad9fc8096dbe282cec1de445e5fa778dc9e7440",
+    "/assets/icons/icon-96x96.png": "575644dfa15136fc0638748072a0de2dbd111ece",
+    "/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
+    "/index.html": "3df4fc92889c37388a5a3d186505f9e936618b0d",
+    "/main.5ff5a6b62acf38cc.js": "7b452e8f5fc375c3dea2d54b98b0bcececa4d5f8",
+    "/manifest.webmanifest": "0884e125504f51c70d15c9e221b207db9f9dc5ce",
+    "/polyfills.5990fc78f4dc9bba.js": "ee5262f80e1d8eba4ecd9f1d7ed8659ca3ca6d52",
+    "/runtime.0f056e590c45ddd9.js": "724a28934f62e81e57d9ee87ce5e391754bc1adc",
+    "/styles.186c8db44232dde1.css": "12aaf0c10261b2fe8093ba1a7d8c5d82c9204eb6"
   },
   "navigationUrls": [
     {
