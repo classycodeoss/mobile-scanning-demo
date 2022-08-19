@@ -25,6 +25,8 @@ export class AppComponent implements AfterViewInit {
     { name: 'Classy Crab (blue)', ean: '7601234561232', image: 'assets/classy_crab_blue.png', price: 10 },
     { name: 'Classy Crab (gold, ltd. ed.)', ean: '7601234564561', image: 'assets/classy_crab_gold.png', price: 50 }
   ];
+  public catalogue2: Article[] = [];
+
 
   private shoppingCart: ShoppingCart;
   private lastScannedCode: string | undefined;
@@ -49,6 +51,16 @@ export class AppComponent implements AfterViewInit {
         this.updateService.checkForUpdates();
       }, 10000);
     }
+    this.getDocs();
+  }
+
+  public getDocs() {
+    this.beepService
+      .getDocs()
+      .subscribe((data) => {
+        this.catalogue2 = data;
+        console.log('mongo Lessons=>', this.catalogue2);
+      });
   }
 
   private initializeScanner(): Promise<void> {

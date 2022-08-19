@@ -8,6 +8,10 @@ import { ShoppingCartItemComponent } from './shopping-cart-item/shopping-cart-it
 
 import { environment } from '../environments/environment';
 
+import { HttpClientModule } from '@angular/common/http';
+
+import { AngularFireModule} from '@angular/fire/compat';
+
 
 
 @NgModule({
@@ -18,6 +22,9 @@ import { environment } from '../environments/environment';
   imports: [
     BrowserModule,
     FormsModule,
+    HttpClientModule,
+
+    AngularFireModule.initializeApp(environment.firebase),
 
     // PWA support
     ServiceWorkerModule.register('ngsw-worker.js')
