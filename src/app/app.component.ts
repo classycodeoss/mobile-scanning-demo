@@ -7,7 +7,6 @@ import { UpdateService } from './update.service';
 import { environment } from '../environments/environment';
 import { getMainBarcodeScanningCamera } from './camera-access';
 // import { Firestore, collectionData, collection } from '@angular/fire/firestore';
-import { Observable } from 'rxjs';
 
 
 @Component({

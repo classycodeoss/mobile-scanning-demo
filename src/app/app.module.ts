@@ -11,6 +11,9 @@ import { environment } from '../environments/environment';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AngularFireModule} from '@angular/fire/compat';
+import { AppRoutingModule } from './app-routing.module';
+import { AfisareProduseComponent } from './afisare-produse/afisare-produse.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -18,12 +21,14 @@ import { AngularFireModule} from '@angular/fire/compat';
 @NgModule({
   declarations: [
     AppComponent,
-    ShoppingCartItemComponent
+    ShoppingCartItemComponent,
+    AfisareProduseComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
+    RouterModule,
 
 
     // provideFirebaseApp(() => initializeApp({ ... })),
@@ -35,7 +40,8 @@ import { AngularFireModule} from '@angular/fire/compat';
 
 
     // PWA support
-    ServiceWorkerModule.register('ngsw-worker.js')
+    ServiceWorkerModule.register('ngsw-worker.js'),
+            AppRoutingModule
   ],
   providers: [
     {
