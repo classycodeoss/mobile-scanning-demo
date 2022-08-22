@@ -13,7 +13,9 @@ export const environment = {
     messagingSenderId: '378634587111',
     measurementId: 'G-SV95K1103F',
   },
-  production: false
+  production: false,
+  mongoAtlas: "mongodb+srv://Riv:<gretna>@cluster0.urrhevw.mongodb.net/?retryWrites=true&w=majority",
+  mongoUrlLocal:'http://localhost:4000/'
 };
 
 /*

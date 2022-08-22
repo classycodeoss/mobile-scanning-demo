@@ -6,6 +6,9 @@ import { ShoppingCart } from './shopping-cart';
 import { UpdateService } from './update.service';
 import { environment } from '../environments/environment';
 import { getMainBarcodeScanningCamera } from './camera-access';
+// import { Firestore, collectionData, collection } from '@angular/fire/firestore';
+import { Observable } from 'rxjs';
+
 
 @Component({
   selector: 'app-root',
@@ -25,7 +28,8 @@ export class AppComponent implements AfterViewInit {
     { name: 'Classy Crab (blue)', ean: '7601234561232', image: 'assets/classy_crab_blue.png', price: 10 },
     { name: 'Classy Crab (gold, ltd. ed.)', ean: '7601234564561', image: 'assets/classy_crab_gold.png', price: 50 }
   ];
-  public catalogue2: Article[] = [];
+  public catalogue2: any = [];
+
 
 
   private shoppingCart: ShoppingCart;
@@ -34,8 +38,15 @@ export class AppComponent implements AfterViewInit {
 
   constructor(private changeDetectorRef: ChangeDetectorRef,
               private beepService: BeepService,
-              private updateService: UpdateService) {
+              private updateService: UpdateService,
+
+              // public firestore: Firestore
+            ) {
     this.shoppingCart = new ShoppingCart();
+
+    // const collection = collection(firestore, 'fsda');
+    // this.item$ = collectionData(collection);
+
   }
 
   ngAfterViewInit(): void {
@@ -51,6 +62,7 @@ export class AppComponent implements AfterViewInit {
         this.updateService.checkForUpdates();
       }, 10000);
     }
+    this.logheaza();
     this.getDocs();
   }
 
@@ -61,6 +73,10 @@ export class AppComponent implements AfterViewInit {
         this.catalogue2 = data;
         console.log('mongo Lessons=>', this.catalogue2);
       });
+  }
+
+  logheaza(){
+    console.log("WORKS")
   }
 
   private initializeScanner(): Promise<void> {

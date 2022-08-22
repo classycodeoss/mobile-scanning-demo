@@ -26,7 +26,8 @@ export class BeepService {
 
   getDocs(){
     // const url = environment.mongoUrl;
-    const url = environment.firebase.databaseURL;
+    const url = environment.mongoUrlLocal+"business";
+    console.log(url)
     return this.http.get<any>(url)
       .pipe(
         map((response: any) => {

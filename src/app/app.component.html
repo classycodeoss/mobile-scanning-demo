@@ -10,7 +10,12 @@
   <!-- This is a companion app for the blog post located <a target="_blank" href="https://blog.classycode.com/">here</a>.
   The source code is available on <a target="_blank" href="https://github.com/classycodeoss/mobile-scanning-demo">Github</a>. -->
 
-  <p>{{catalogue2}}</p>
+ <ul>
+  <li  *ngFor="let item of catalogue2"> {{item.price}}</li>
+ </ul>
+  <!-- <p>{{catalogue2.price}}</p> -->
+
+
 </div>
 
 <div class="controls">

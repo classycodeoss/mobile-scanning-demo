@@ -9,5 +9,6 @@ export const environment = {
     messagingSenderId: '378634587111',
     measurementId: 'G-SV95K1103F',
   },
-  production: true
+  production: true,
+  mongoUrlLocal:'http://localhost:4000/'
 };

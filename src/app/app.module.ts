@@ -14,6 +14,7 @@ import { AngularFireModule} from '@angular/fire/compat';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +25,14 @@ import { AngularFireModule} from '@angular/fire/compat';
     FormsModule,
     HttpClientModule,
 
+
+    // provideFirebaseApp(() => initializeApp({ ... })),
+    // provideFirestore(() => getFirestore()),
+
     AngularFireModule.initializeApp(environment.firebase),
+
+
+
 
     // PWA support
     ServiceWorkerModule.register('ngsw-worker.js')
@@ -39,6 +47,9 @@ import { AngularFireModule} from '@angular/fire/compat';
         };
       }
     },
+
+
+
   ],
   bootstrap: [AppComponent]
 })
