@@ -13,6 +13,9 @@ MIT
 @angular/platform-browser
 MIT
 
+@angular/router
+MIT
+
 @angular/service-worker
 MIT
 
@@ -47,10 +50,22 @@ Apache-2.0
 @firebase/app
 Apache-2.0
 
-@firebase/app-compat
+@firebase/app-check
+Apache-2.0
+
+@firebase/auth
 Apache-2.0
 
 @firebase/component
+Apache-2.0
+
+@firebase/database
+Apache-2.0
+
+@firebase/firestore
+Apache-2.0
+
+@firebase/functions
 Apache-2.0
 
 @firebase/installations
@@ -68,11 +83,22 @@ Apache-2.0
 @firebase/util
 Apache-2.0
 
+@firebase/webchannel-wrapper
+Apache-2.0
+
 firebase/analytics
 
 firebase/app
 
-firebase/compat/app
+firebase/app-check
+
+firebase/auth
+
+firebase/database
+
+firebase/firestore
+
+firebase/functions
 
 firebase/messaging
 

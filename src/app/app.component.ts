@@ -6,7 +6,10 @@ import { ShoppingCart } from './shopping-cart';
 import { UpdateService } from './update.service';
 import { environment } from '../environments/environment';
 import { getMainBarcodeScanningCamera } from './camera-access';
-// import { Firestore, collectionData, collection } from '@angular/fire/firestore';
+
+import { Observable } from 'rxjs';
+import { PokedexFirestoreService } from './pokedex-firestore.service';
+import { DocumentData } from '@angular/fire/firestore';
 
 
 @Component({
@@ -29,7 +32,7 @@ export class AppComponent implements AfterViewInit {
   ];
   public catalogue2: any = [];
 
-
+  pokemon$: Observable<DocumentData>;
 
   private shoppingCart: ShoppingCart;
   private lastScannedCode: string | undefined;
@@ -38,6 +41,7 @@ export class AppComponent implements AfterViewInit {
   constructor(private changeDetectorRef: ChangeDetectorRef,
               private beepService: BeepService,
               private updateService: UpdateService,
+              private pokedexService: PokedexFirestoreService
 
               // public firestore: Firestore
             ) {
@@ -63,7 +67,9 @@ export class AppComponent implements AfterViewInit {
     }
     this.logheaza();
     this.getDocs();
+    this.pokemon$ = this.pokedexService.getAll();
   }
+
 
   public getDocs() {
     this.beepService
@@ -76,6 +82,7 @@ export class AppComponent implements AfterViewInit {
 
   logheaza(){
     console.log("WORKS")
+    console.log(this.pokemon$)
   }
 
   private initializeScanner(): Promise<void> {
