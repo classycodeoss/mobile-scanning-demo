@@ -31,7 +31,7 @@ export class BeepService {
     return this.http.get<any>(url)
       .pipe(
         map((response: any) => {
-          console.warn("MONGO LESSONS", response)
+          console.warn("Mongo DB:", response)
           return response;
         }),
 

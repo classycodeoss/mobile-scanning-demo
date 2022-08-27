@@ -1,6 +1,7 @@
 export interface Article {
-  ean: string;
   name: string;
+  ean: string;
+
   image: string;
   price: number;
 }

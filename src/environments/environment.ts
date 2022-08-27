@@ -15,7 +15,7 @@ export const environment = {
     measurementId: 'G-SV95K1103F',
   },
   production: false,
-  mongoAtlas: "mongodb+srv://Riv:<gretna>@cluster0.urrhevw.mongodb.net/?retryWrites=true&w=majority",
+  // mongoAtlas: "mongodb+srv://Riv:<gretna>@cluster0.urrhevw.mongodb.net/?retryWrites=true&w=majority",
   mongoUrlLocal:'http://localhost:4000/'
 };
 

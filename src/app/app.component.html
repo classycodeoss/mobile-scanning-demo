@@ -30,6 +30,14 @@
 
 <div class="shopping-cart">
 
+
+
+  <ul>
+    <li  *ngFor="let item of catalogue2"> {{item.name}}</li>
+   </ul>
+
+
+
   <span *ngIf="items.length === 0 else shoppingCartItems">Shopping cart is empty</span>
   <ng-template #shoppingCartItems>
 

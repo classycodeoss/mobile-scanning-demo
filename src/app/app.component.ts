@@ -76,7 +76,7 @@ export class AppComponent implements AfterViewInit {
       .getDocs()
       .subscribe((data) => {
         this.catalogue2 = data;
-        console.log('mongo Lessons=>', this.catalogue2);
+        console.log('mongo Crabs=>', this.catalogue2);
       });
   }
 
@@ -170,7 +170,8 @@ export class AppComponent implements AfterViewInit {
     }
 
     // only accept articles from catalogue
-    let article = this.catalogue.find(a => a.ean === code);
+    let article = this.catalogue2.find((item: { ean: string; }) => item.ean === code);
+    alert(code)
     if (!article) {
       if (this.acceptAnyCode) {
         article = this.createUnknownArticle(code);
@@ -198,7 +199,7 @@ export class AppComponent implements AfterViewInit {
       ean: code,
       name: `Code ${code}`,
       image: 'assets/classy_crab_unknown.png',
-      price: 42
+      price: 2
     }
   }
 
