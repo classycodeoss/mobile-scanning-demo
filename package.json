@@ -9,8 +9,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-     "build": "grunt dist",
-    "postinstall": "./node_modules/bower/bin/bower install && npm run build"
+     "build": "grunt dist"
+
   },
   "private": true,
   "dependencies": {
