@@ -11,7 +11,7 @@
   The source code is available on <a target="_blank" href="https://github.com/classycodeoss/mobile-scanning-demo">Github</a>. -->
 
  <ul>
-  <li  *ngFor="let item of catalogue2"> {{item.price}}</li>
+  <li  *ngFor="let item of catalogue2">{{item.name}}, preț: {{item.price}}</li>
  </ul>
   <!-- <p>{{catalogue2.price}}</p> -->
 
@@ -21,9 +21,9 @@
 <div class="controls">
   <form>
     <input id="acceptAnyCode" type="checkbox" [(ngModel)]="acceptAnyCode" name="acceptAnyCode" required/>
-    <label for="acceptAnyCode">Accept any code</label>
+    <label for="acceptAnyCode">Acceptă și coduri neînregistrate în sistem</label>
     &nbsp;
-    <button (click)="clearCart()">Clear cart</button>
+    <button (click)="clearCart()">Șterge selecții</button>
   </form>
 
 </div>
@@ -33,12 +33,12 @@
 
 
   <ul>
-    <li  *ngFor="let item of catalogue2"> {{item.name}}</li>
+    <small><li  *ngFor="let item of catalogue2"> {{item.name}}, Cod bare: {{item.ean}}</li></small>
    </ul>
 
 
 
-  <span *ngIf="items.length === 0 else shoppingCartItems">Shopping cart is empty</span>
+  <span *ngIf="items.length === 0 else shoppingCartItems">Lista e goală</span>
   <ng-template #shoppingCartItems>
 
     <app-shopping-cart-item
