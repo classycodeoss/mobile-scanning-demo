@@ -13,7 +13,7 @@ import { DocumentData } from '@angular/fire/firestore';
 import { enableDebugTools } from '@angular/platform-browser';
 import {MatTabsModule} from '@angular/material/tabs';
 // import { MatIconModule } from '@angular/material/icon'
-
+import {MatTableDataSource, MatTableModule} from '@angular/material/table'
 
 @Component({
   selector: 'app-root',
@@ -34,7 +34,14 @@ export class AppComponent implements AfterViewInit {
     { name: 'Classy Crab (gold, ltd. ed.)', ean: '7601234564561', image: 'assets/classy_crab_gold.png', price: 50 },
     { name: 'Cafea', ean: '8000070038028', image: 'https://www.lavazza.ro/ro/cafea/macinata/qualita-rossa.html', price: 50 }
   ];
-  public catalogue2: any = [];
+  public catalogue2: Article[] = [];
+
+
+
+
+  displayedColumns: string[] = ['name', 'ean', 'price'];
+  dataSource: any;
+
 
   pokemon$: Observable<DocumentData>;
 
@@ -71,6 +78,7 @@ export class AppComponent implements AfterViewInit {
     }
     this.logheaza();
     this.getDocs();
+    this.getDocsForTable();
     this.pokemon$ = this.pokedexService.getAll();
   }
 
@@ -81,6 +89,14 @@ export class AppComponent implements AfterViewInit {
       .subscribe((data) => {
         this.catalogue2 = data;
         console.log('mongo Crabs=>', this.catalogue2);
+      });
+  }
+  public getDocsForTable() {
+    this.beepService
+      .getDocs()
+      .subscribe((data) => {
+        this.dataSource = data;
+        console.log('table docs=>', this.dataSource);
       });
   }
 

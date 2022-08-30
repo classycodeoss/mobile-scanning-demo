@@ -17,11 +17,17 @@ import { provideFunctions,getFunctions } from '@angular/fire/functions';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatTabsModule} from '@angular/material/tabs';
 
+import {MatTableModule} from '@angular/material/table'
+
+import { MaterialComponentsModule } from './material-components/material-components.module';
+
+
 @NgModule({
   declarations: [
     AppComponent,
     ShoppingCartItemComponent,
-    AfisareProduseComponent
+    AfisareProduseComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -29,6 +35,9 @@ import {MatTabsModule} from '@angular/material/tabs';
     HttpClientModule,
     RouterModule,
     MatTabsModule,
+    MatTableModule,
+    MaterialComponentsModule,
+    BrowserAnimationsModule,
 
 
 
