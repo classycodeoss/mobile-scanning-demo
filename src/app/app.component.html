@@ -10,9 +10,9 @@
   <!-- This is a companion app for the blog post located <a target="_blank" href="https://blog.classycode.com/">here</a>.
   The source code is available on <a target="_blank" href="https://github.com/classycodeoss/mobile-scanning-demo">Github</a>. -->
 
- <ul>
-  <li  *ngFor="let item of catalogue2">{{item.name}}, preț: {{item.price}}</li>
- </ul>
+  <ul>
+    <li *ngFor="let item of catalogue2">{{item.name}}, preț: {{item.price}}</li>
+  </ul>
   <!-- <p>{{catalogue2.price}}</p> -->
 
 
@@ -20,9 +20,10 @@
 
 <div class="controls">
   <form>
-    <input id="acceptAnyCode" type="checkbox" [(ngModel)]="acceptAnyCode" name="acceptAnyCode" required/>
+    <input id="acceptAnyCode" type="checkbox" [(ngModel)]="acceptAnyCode" name="acceptAnyCode" required />
     <label for="acceptAnyCode">Acceptă și coduri neînregistrate în sistem</label>
     &nbsp;
+
     <button (click)="clearCart()">Șterge selecții</button>
   </form>
 
@@ -33,23 +34,47 @@
 
 
   <ul>
-    <small><li  *ngFor="let item of catalogue2"> {{item.name}}, Cod bare: {{item.ean}}</li></small>
-   </ul>
+    <small>
+      <li *ngFor="let item of catalogue2"> {{item.name}}, Cod bare: {{item.ean}}</li>
+    </small>
+  </ul>
 
 
 
   <span *ngIf="items.length === 0 else shoppingCartItems">Lista e goală</span>
+
+  <mat-tab-group>
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <!-- <mat-icon class="example-tab-icon">thumb_up</mat-icon> -->
+        First
+      </ng-template>
+      Content 1
+    </mat-tab>
+
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <!-- <mat-icon class="example-tab-icon">thumb_up</mat-icon> -->
+        Second
+      </ng-template>
+      Content 2
+    </mat-tab>
+
+
+  </mat-tab-group>
+
   <ng-template #shoppingCartItems>
 
-    <app-shopping-cart-item
-      *ngFor="let articleAndCount of items"
-      [article]="articleAndCount[0]"
+    <app-shopping-cart-item *ngFor="let articleAndCount of items" [article]="articleAndCount[0]"
       [count]="articleAndCount[1]">
     </app-shopping-cart-item>
 
     <div class="shopping-cart-total">
-      Total: {{ totalPrice }} USD
+      Total: {{ totalPrice }} Lei
     </div>
+
+
+
+
   </ng-template>
 </div>
-

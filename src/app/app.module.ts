@@ -14,8 +14,8 @@ import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideDatabase,getDatabase } from '@angular/fire/database';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { provideFunctions,getFunctions } from '@angular/fire/functions';
-
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatTabsModule} from '@angular/material/tabs';
 
 @NgModule({
   declarations: [
@@ -28,6 +28,8 @@ import { provideFunctions,getFunctions } from '@angular/fire/functions';
     FormsModule,
     HttpClientModule,
     RouterModule,
+    MatTabsModule,
+
 
 
 
@@ -40,7 +42,8 @@ import { provideFunctions,getFunctions } from '@angular/fire/functions';
             provideAuth(() => getAuth()),
             provideDatabase(() => getDatabase()),
             provideFirestore(() => getFirestore()),
-            provideFunctions(() => getFunctions())
+            provideFunctions(() => getFunctions()),
+            BrowserAnimationsModule
   ],
   providers: [
     {
