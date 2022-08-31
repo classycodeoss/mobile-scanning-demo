@@ -1,4 +1,7 @@
 /* To learn more about this file see: https://angular.io/config/tsconfig. */
+
+
+//S A ADAUGAT  "strictPropertyInitialization": false,
 {
   "compileOnSave": false,
   "compilerOptions": {
@@ -6,6 +9,7 @@
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
     "strict": true,
+    "strictPropertyInitialization": false,
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
@@ -21,7 +25,10 @@
     "lib": [
       "es2020",
       "dom"
-    ]
+    ],
+
+
+    "noImplicitAny": true
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

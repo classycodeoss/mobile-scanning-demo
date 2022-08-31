@@ -1,0 +1,15 @@
+{
+  "projects": {
+    "default": "pwa-gabi"
+  },
+  "targets": {
+    "pwa-gabi": {
+      "hosting": {
+        "mobile-scanning-demo": [
+          "pwa-gabi"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}
